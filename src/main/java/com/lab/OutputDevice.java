@@ -1,4 +1,4 @@
-package main.java.com.bepis;
+package main.java.com.lab;
 
 public class OutputDevice {
 
