@@ -22,7 +22,24 @@ public class Application {
         System.out.println(Arrays.toString(numbers));
     }
 
+    public int[] wordSizeHistogram(String sentence){
+        int[] histogram = new int[7];
+        // Initialize to size of 7, then split the sentence on spaces and iterate through each word.
+        for(String word: sentence.split(" ")){
+
+            // Checks if the length of the word is greater than the length of the histogram array.
+            // This is needed because if we have a word of length 7 it will try to store it at histogram[7], which for
+            // Our declaration, is out of bounds, so we copy the histogram in a new array with the length + 1
+            if (word.length() >= histogram.length){
+                histogram = Arrays.copyOf(histogram, histogram.length + 1);
+            }
+            histogram[word.length()] += 1;
+        }
+
+        return histogram;
+    }
+
     public void run(){
-        this.randomArraySort();
+//        this.randomArraySort();
     }
 }
