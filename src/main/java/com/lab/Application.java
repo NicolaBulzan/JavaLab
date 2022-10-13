@@ -15,11 +15,14 @@ public class Application {
         Arrays.sort(numbers);
     }
 
-    public void run(){
+    public void randomArraySort(){
         int[] numbers = this.inputDevice.getNumbers(10);
         System.out.println(Arrays.toString(numbers));
         this.sortNumbers(numbers);
         System.out.println(Arrays.toString(numbers));
+    }
 
+    public void run(){
+        this.randomArraySort();
     }
 }
