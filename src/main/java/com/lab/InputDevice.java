@@ -17,6 +17,10 @@ public class InputDevice {
         return numbers;
     }
 
+    public String getLine() {
+        return "The quick brown fox jumps over the lazy dog";
+    }
+
     public int nextInt() {
         Random rand = new Random();
         return rand.nextInt(100);
