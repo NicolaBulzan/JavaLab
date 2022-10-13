@@ -1,5 +1,7 @@
 package main.java.com.lab;
 
+import java.util.Arrays;
+
 public class Application {
     InputDevice inputDevice;
     OutputDevice outputDevice;
@@ -10,9 +12,6 @@ public class Application {
     }
 
     public void run(){
-        outputDevice.writeMessage("Application started.");
-        outputDevice.writeMessage("Today's lucky numbers are: ");
-        outputDevice.writeMessage(inputDevice.nextInt());
-        outputDevice.writeMessage(Integer.toString(inputDevice.nextInt()));
+        System.out.println(Arrays.toString(this.inputDevice.getNumbers(10)));
     }
 }
