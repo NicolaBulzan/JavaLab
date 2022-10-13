@@ -11,7 +11,15 @@ public class Application {
         this.outputDevice = outputDevice;
     }
 
+    public void sortNumbers(int[] numbers){
+        Arrays.sort(numbers);
+    }
+
     public void run(){
-        System.out.println(Arrays.toString(this.inputDevice.getNumbers(10)));
+        int[] numbers = this.inputDevice.getNumbers(10);
+        System.out.println(Arrays.toString(numbers));
+        this.sortNumbers(numbers);
+        System.out.println(Arrays.toString(numbers));
+
     }
 }
