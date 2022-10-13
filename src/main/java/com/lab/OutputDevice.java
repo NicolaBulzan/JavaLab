@@ -10,4 +10,10 @@ public class OutputDevice {
         System.out.println(numericalMessage);
     }
 
+    public void writeMessage(String[] messArr) {
+        for(String arg: messArr){
+            this.writeMessage(arg);
+        }
+    }
+
 }

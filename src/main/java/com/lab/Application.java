@@ -5,10 +5,12 @@ import java.util.Arrays;
 public class Application {
     InputDevice inputDevice;
     OutputDevice outputDevice;
+    String arg;
 
-    public Application(InputDevice inputDevice, OutputDevice outputDevice) {
+    public Application(InputDevice inputDevice, OutputDevice outputDevice, String arg) {
         this.inputDevice = inputDevice;
         this.outputDevice = outputDevice;
+        this.arg = arg;
     }
 
     private void sortNumbers(int[] numbers){
@@ -44,7 +46,11 @@ public class Application {
     }
 
     public void run(){
-//        this.randomArraySort();
-        this.exampleHistogram();
+
+        if (arg.equals("words")){
+            this.exampleHistogram();
+        } else if (arg.equals("numbers")){
+            this.randomArraySort();
+        }
     }
 }
