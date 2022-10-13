@@ -11,18 +11,18 @@ public class Application {
         this.outputDevice = outputDevice;
     }
 
-    public void sortNumbers(int[] numbers){
+    private void sortNumbers(int[] numbers){
         Arrays.sort(numbers);
     }
 
-    public void randomArraySort(){
+    private void randomArraySort(){
         int[] numbers = this.inputDevice.getNumbers(10);
         System.out.println(Arrays.toString(numbers));
         this.sortNumbers(numbers);
         System.out.println(Arrays.toString(numbers));
     }
 
-    public int[] wordSizeHistogram(String sentence){
+    private int[] wordSizeHistogram(String sentence){
         int[] histogram = new int[7];
         // Initialize to size of 7, then split the sentence on spaces and iterate through each word.
         for(String word: sentence.split(" ")){
@@ -39,7 +39,12 @@ public class Application {
         return histogram;
     }
 
+    private void exampleHistogram() {
+        System.out.println(Arrays.toString(this.wordSizeHistogram(inputDevice.getLine())));
+    }
+
     public void run(){
 //        this.randomArraySort();
+        this.exampleHistogram();
     }
 }
