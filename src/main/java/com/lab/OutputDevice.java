@@ -6,6 +6,10 @@ public class OutputDevice {
         System.out.println(mess);
     }
 
+    public void writeMessage(Double mess) {
+        System.out.println(mess);
+    }
+
     public void writeMessage(int numericalMessage) {
         System.out.println(numericalMessage);
     }

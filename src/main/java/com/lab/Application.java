@@ -1,5 +1,9 @@
 package main.java.com.lab;
 
+import main.java.com.lab.fruits.Fruit;
+import main.java.com.lab.fruits.Peelable;
+import main.java.com.lab.fruits.SeedRemovable;
+
 import java.util.Arrays;
 
 public class Application {
@@ -45,6 +49,23 @@ public class Application {
         System.out.println(Arrays.toString(this.wordSizeHistogram(inputDevice.getLine())));
     }
 
+    private void testFruitStuff() {
+        Fruit[] fruits = inputDevice.readFruit();
+
+        outputDevice.writeMessage(Fruit.computeSugarContent(fruits));
+        outputDevice.writeMessage(Fruit.computeWeight(fruits));
+        Fruit.prepareFruit(fruits);
+
+        for (Fruit f: fruits){
+            if(f instanceof Peelable){
+                System.out.println(((Peelable) f).hasPeel());
+            }
+            if(f instanceof SeedRemovable){
+                System.out.println(((SeedRemovable) f).hasSeeds());
+            }
+        }
+    }
+
     public void run(){
 
         if (arg.equals("words")){
@@ -52,5 +73,10 @@ public class Application {
         } else if (arg.equals("numbers")){
             this.randomArraySort();
         }
+
+        this.testFruitStuff();
+
+
+
     }
 }
