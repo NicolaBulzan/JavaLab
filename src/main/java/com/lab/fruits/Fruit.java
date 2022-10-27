@@ -1,5 +1,7 @@
 package main.java.com.lab.fruits;
 
+import java.util.Collection;
+
 abstract public class Fruit {
     private double weight;
     private double water_content;
@@ -39,6 +41,14 @@ abstract public class Fruit {
         this.color = color;
     }
 
+    public static double computeWeight(Collection<Fruit> fruits) {
+        double totalWeight = 0;
+        for(Fruit f: fruits){
+            totalWeight += f.getWeight();
+        }
+        return totalWeight;
+    }
+
     public static double computeWeight(Fruit[] fruits) {
         double totalWeight = 0;
         for(Fruit f: fruits){
@@ -47,12 +57,31 @@ abstract public class Fruit {
         return totalWeight;
     }
 
+    public static double computeSugarContent(Collection<Fruit> fruits) {
+        double totalSugarContent = 0;
+        for(Fruit f: fruits){
+            totalSugarContent += f.getSugar_content();
+        }
+        return totalSugarContent;
+    }
+
     public static double computeSugarContent(Fruit[] fruits) {
         double totalSugarContent = 0;
         for(Fruit f: fruits){
             totalSugarContent += f.getSugar_content();
         }
         return totalSugarContent;
+    }
+
+    public static void prepareFruit(Collection<Fruit> fruits) {
+        for (Fruit f: fruits){
+            if(f instanceof Peelable){
+                ((Peelable) f).peelOff();
+            }
+            if(f instanceof SeedRemovable){
+                ((SeedRemovable) f).removeSeeds();
+            }
+        }
     }
 
     public static void prepareFruit(Fruit[] fruits) {

@@ -4,6 +4,7 @@ import main.java.com.lab.fruits.Fruit;
 import main.java.com.lab.fruits.Peelable;
 import main.java.com.lab.fruits.SeedRemovable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Application {
@@ -50,7 +51,7 @@ public class Application {
     }
 
     private void testFruitStuff() {
-        Fruit[] fruits = inputDevice.readFruit();
+        ArrayList<Fruit> fruits = inputDevice.readFruit();
 
         outputDevice.writeMessage(Fruit.computeSugarContent(fruits));
         outputDevice.writeMessage(Fruit.computeWeight(fruits));
