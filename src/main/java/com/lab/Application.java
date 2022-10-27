@@ -56,6 +56,7 @@ public class Application {
         outputDevice.writeMessage(Fruit.computeSugarContent(fruits));
         outputDevice.writeMessage(Fruit.computeWeight(fruits));
         Fruit.prepareFruit(fruits);
+        outputDevice.writeMessage(Fruit.countFruit(fruits));
 
         for (Fruit f: fruits){
             if(f instanceof Peelable){

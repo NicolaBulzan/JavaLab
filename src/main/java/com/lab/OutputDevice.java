@@ -1,5 +1,7 @@
 package main.java.com.lab;
 
+import java.util.Map;
+
 public class OutputDevice {
 
     public void writeMessage(String mess) {
@@ -12,6 +14,10 @@ public class OutputDevice {
 
     public void writeMessage(int numericalMessage) {
         System.out.println(numericalMessage);
+    }
+
+    public <K, V> void writeMessage(Map<K, V> mapMessage){
+        System.out.println(mapMessage);
     }
 
     public void writeMessage(String[] messArr) {

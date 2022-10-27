@@ -1,6 +1,7 @@
 package main.java.com.lab.fruits;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 abstract public class Fruit {
     private double weight;
@@ -93,6 +94,20 @@ abstract public class Fruit {
                 ((SeedRemovable) f).removeSeeds();
             }
         }
+    }
+
+    public static HashMap<String, Integer> countFruit(Collection<Fruit> fruits){
+        HashMap<String, Integer> fruitMap = new HashMap<String, Integer>();
+        for (Fruit f : fruits){
+            String fruit_class_name = f.getClass().getSimpleName();
+            if(fruitMap.containsKey(f.getClass().getSimpleName())){
+                fruitMap.put(fruit_class_name, fruitMap.get(fruit_class_name) + 1);
+            }
+            else{
+                fruitMap.put(fruit_class_name, 1);
+            }
+        }
+        return fruitMap;
     }
 
     public enum Color {
