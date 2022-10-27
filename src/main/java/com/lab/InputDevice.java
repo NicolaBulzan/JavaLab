@@ -43,7 +43,7 @@ public class InputDevice {
         fruits.add(new Banana(15, 3, 6));
         fruits.add(new Banana(25, 19, 2));
         fruits.add(new Apple(11, 4, 8, Fruit.Color.RED));
-        fruits.add(new Mango(20, 4, 4, Fruit.Color.GREEN))
+        fruits.add(new Mango(20, 4, 4, Fruit.Color.GREEN));
         return fruits;
     }
 }
