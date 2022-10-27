@@ -70,6 +70,16 @@ public class Application {
         }
     }
 
+    private void testFruitComparison(){
+        ArrayList<Fruit> fruits = inputDevice.readFruit();
+        outputDevice.writeMessage(fruits);
+        outputDevice.writeMessage(Collections.max(fruits));
+        outputDevice.writeMessage(Collections.min(fruits));
+        Collections.sort(fruits);
+        outputDevice.writeMessage(fruits);
+
+    }
+
     public void run(){
 
         if (arg.equals("words")){
@@ -78,7 +88,8 @@ public class Application {
             this.randomArraySort();
         }
 
-        this.testFruitStuff();
+//        this.testFruitStuff();
+        this.testFruitComparison();
 
 
 

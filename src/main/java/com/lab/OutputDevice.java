@@ -20,6 +20,10 @@ public class OutputDevice {
         System.out.println(mapMessage);
     }
 
+    public <T> void writeMessage(T message) {
+        System.out.println(message);
+    }
+
     public void writeMessage(String[] messArr) {
         for(String arg: messArr){
             this.writeMessage(arg);
