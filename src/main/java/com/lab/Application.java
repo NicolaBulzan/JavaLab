@@ -6,6 +6,8 @@ import main.java.com.lab.fruits.SeedRemovable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Application {
     InputDevice inputDevice;

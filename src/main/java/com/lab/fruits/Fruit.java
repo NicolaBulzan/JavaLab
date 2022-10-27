@@ -3,7 +3,7 @@ package main.java.com.lab.fruits;
 import java.util.Collection;
 import java.util.HashMap;
 
-abstract public class Fruit {
+abstract public class Fruit implements Comparable<Fruit> {
     private double weight;
     private double water_content;
     private double sugar_content;
@@ -108,6 +108,21 @@ abstract public class Fruit {
             }
         }
         return fruitMap;
+    }
+
+    @Override
+    public int compareTo(Fruit o) {
+        if(this.weight > o.weight) {
+            return 1;
+        }
+        else if(this.weight == o.weight){
+            if(this.sugar_content > o.sugar_content){
+                return 1;
+            } else if (this.sugar_content == o.sugar_content){
+                return 0;
+            }
+        }
+        return -1;
     }
 
     public enum Color {
