@@ -77,6 +77,7 @@ public class Application {
         outputDevice.writeMessage(Collections.min(fruits));
         Collections.sort(fruits);
         outputDevice.writeMessage(fruits);
+        outputDevice.writeMessage(Fruit.mostPopular(fruits));
 
     }
 

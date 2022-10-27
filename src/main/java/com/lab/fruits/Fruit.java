@@ -1,7 +1,9 @@
 package main.java.com.lab.fruits;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 abstract public class Fruit implements Comparable<Fruit> {
     private double weight;
@@ -123,6 +125,17 @@ abstract public class Fruit implements Comparable<Fruit> {
             }
         }
         return -1;
+    }
+
+    public static String mostPopular(Collection<Fruit> fruits){
+        HashMap<String, Integer> fruitMap = Fruit.countFruit(fruits);
+        int max_val = Collections.max(fruitMap.values());
+        for (Map.Entry<String, Integer> entry: fruitMap.entrySet()){
+            if(entry.getValue() == max_val){
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 
     public enum Color {
