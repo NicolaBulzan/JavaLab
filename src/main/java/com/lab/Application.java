@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.Stream;
 
 public class Application {
     InputDevice inputDevice;
@@ -81,6 +82,17 @@ public class Application {
 
     }
 
+    private void testFruitStreams(){
+        ArrayList<Fruit> fruits = inputDevice.readFruit();
+        Stream<Fruit> filteredFruits = fruits.stream().filter(fruit -> fruit.getSugar_content() < 20);
+        filteredFruits.forEach(x -> outputDevice.writeMessage(x));
+
+        double sugarContent = fruits.stream().map(Fruit::getSugar_content).reduce((double) 0, Double::sum);
+        outputDevice.writeMessage(sugarContent);
+
+        fruits.stream().map(f -> f.getSugar_content() / f.getWater_content()).forEach(outputDevice::writeMessage);
+    }
+
     public void run(){
 
         if (arg.equals("words")){
@@ -90,7 +102,8 @@ public class Application {
         }
 
 //        this.testFruitStuff();
-        this.testFruitComparison();
+//        this.testFruitComparison();
+        this.testFruitStreams();
 
 
 
